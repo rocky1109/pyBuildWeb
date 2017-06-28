@@ -54,6 +54,9 @@ class Deliverable(object):
             return os.path.basename(self.path)
         return ""
 
+    def __getitem__(self, item):
+        return self.__dict__[item]
+
     def __repr__(self):
         return "<Deliverable-{0}({1})>".format(self.name, self._build_url.split('/')[-2])
 
