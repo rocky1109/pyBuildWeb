@@ -3,7 +3,7 @@ import sys
 
 from codecs import open
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 VERSION = '0.1'
@@ -13,11 +13,7 @@ if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
-
-packages = [
-    'pyBuildWeb',
-]
-
+    
 requires = ['requests']
 
 
@@ -27,12 +23,11 @@ with open('README.rst', 'r', 'utf-8') as f:
 setup(
     name='pyBuildWeb',
     version=VERSION,
-    description='BuildWeb helper class.',
+    description='BuildWeb helper service.',
     long_description=readme,
     author='Rocky Ramchandani',
     author_email='riverdale1109@gmail.com',
-    packages=packages,
-    package_dir={'pyBuildWeb': 'pyBuildWeb'},
+    packages=find_packages(),
     include_package_data=True,
     install_requires=requires,
     license='Apache 2.0',
