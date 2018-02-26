@@ -17,7 +17,7 @@ if sys.argv[-1] == 'publish':
 requires = ['requests']
 
 
-with open('README.rst', 'r', 'utf-8') as f:
+with open('README.md', 'r', 'utf-8') as f:
     readme = f.read()
 
 setup(
@@ -27,6 +27,8 @@ setup(
     long_description=readme,
     author='Rocky Ramchandani',
     author_email='riverdale1109@gmail.com',
+    url='https://github.com/rocky1109/pyBuildWeb',
+    keywords='vmware devops buildweb',
     packages=find_packages(),
     include_package_data=True,
     install_requires=requires,
